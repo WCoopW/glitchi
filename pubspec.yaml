@@ -1,7 +1,4 @@
 name: glitchi
-description: >
-  Highly scalable Flutter starter kit, designed with an optimal predefined structure  and inclusive of libraries that are widely applicable in numerous use cases. #magic___^_^___line
-# Prevent accidental publishing to pub.dev.
 publish_to: "none"
 
 version: 0.0.1+1
@@ -37,6 +34,7 @@ dependencies:
   # Logging
   stack_trace: ^1.11.1
   dio: ^5.9.0
+  freezed_annotation: ^2.4.4
 
 dev_dependencies:
   # Testing
@@ -53,6 +51,7 @@ dev_dependencies:
 
   # Codegen
   drift_dev: ^2.20.1
+  freezed: ^2.5.7
   build_runner: ^2.4.12
 
 flutter:
