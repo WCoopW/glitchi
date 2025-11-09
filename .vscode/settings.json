@@ -1,0 +1,26 @@
+{
+  "dart.flutterSdkPath": "/home/wcoopw/fvm/versions/stable",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Tokyo Night AltSynt",
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+  "editor.formatOnSave": true,
+  "editor.mouseWheelZoom": true,
+  "editor.inlineSuggest.showToolbar": "always",
+  "terminal.integrated.fontWeight": "normal",
+  "explorer.confirmDelete": false,
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.dcm.fixAll": "always"
+  },
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "editor.fontFamily": "'MesloLGM Nerd Font'",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+}

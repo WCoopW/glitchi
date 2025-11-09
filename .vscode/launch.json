@@ -1,0 +1,70 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🚀 DEV Environment",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=ENVIRONMENT=DEV",
+        "--dart-define=DEV_API_BASE_URL=http://dev.cybershtab.infosec.local",
+        "--dart-define=API_VERSION=api/v1",
+        "--dart-define=API_CONNECTION_TIMEOUT=15000",
+        "--dart-define=API_RECEIVE_TIMEOUT=15000"
+      ]
+    },
+    {
+      "name": "🔧 STAGING Environment",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=ENVIRONMENT=STAGING",
+        "--dart-define=STAGING_API_BASE_URL=https://staging-api.cybershtab.ru",
+        "--dart-define=API_VERSION=api/v1",
+        "--dart-define=API_CONNECTION_TIMEOUT=15000",
+        "--dart-define=API_RECEIVE_TIMEOUT=15000"
+      ]
+    },
+    {
+      "name": "🏭 PRODUCTION Environment",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=ENVIRONMENT=PROD",
+        "--dart-define=PROD_API_BASE_URL=https://cybershtab.ru",
+        "--dart-define=API_VERSION=api/v1",
+        "--dart-define=API_CONNECTION_TIMEOUT=15000",
+        "--dart-define=API_RECEIVE_TIMEOUT=15000"
+      ]
+    },
+    {
+      "name": "📊 Profile Mode (DEV)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+      "args": [
+        "--dart-define=ENVIRONMENT=DEV",
+        "--dart-define=DEV_API_BASE_URL=http://dev.cybershtab.infosec.local",
+        "--dart-define=API_VERSION=api/v1",
+        "--dart-define=API_CONNECTION_TIMEOUT=15000",
+        "--dart-define=API_RECEIVE_TIMEOUT=15000"
+      ]
+    },
+    {
+      "name": "🚀 Release Mode (DEV)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "args": [
+        "--dart-define=ENVIRONMENT=DEV",
+        "--dart-define=DEV_API_BASE_URL=http://dev.cybershtab.infosec.local",
+        "--dart-define=API_VERSION=api/v1",
+        "--dart-define=API_CONNECTION_TIMEOUT=15000",
+        "--dart-define=API_RECEIVE_TIMEOUT=15000"
+      ]
+    }
+  ]
+}
