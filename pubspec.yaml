@@ -25,6 +25,12 @@ dependencies:
   flutter_bloc: ^8.1.6
   bloc_concurrency: ^0.2.5
 
+  # State Management
+  provider: ^6.1.1
+
+  # Fonts
+  google_fonts: ^6.1.0
+
   drift: ^2.20.0
   drift_flutter: ^0.2.0
 
