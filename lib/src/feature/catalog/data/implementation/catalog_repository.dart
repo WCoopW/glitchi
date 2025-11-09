@@ -10,6 +10,13 @@ final class CatalogRepository implements ICatalogRepository {
   });
 
   @override
-  Future<List<Product>> fetchProducts(int page, int limit, String category) =>
-      catalogDataSource.fetchProducts(page, limit, category);
+  Future<({List<Product> products, int lastPage})> fetchProducts(
+      int page, int limit, String category) {
+    return catalogDataSource.fetchProducts(page, limit, category).then(
+          (paginatedData) => (
+            products: paginatedData.products,
+            lastPage: paginatedData.lastPage,
+          ),
+        );
+  }
 }

@@ -16,6 +16,7 @@
         "flutter",
         "flutter_bloc",
         "flutter_localizations",
+        "freezed_annotation",
         "google_fonts",
         "intl",
         "meta",
@@ -29,12 +30,13 @@
         "flutter_launcher_icons",
         "flutter_native_splash",
         "flutter_test",
+        "freezed",
         "sizzle_lints"
       ]
     },
     {
       "name": "build_runner",
-      "version": "2.10.1",
+      "version": "2.5.4",
       "dependencies": [
         "analyzer",
         "args",
@@ -42,18 +44,19 @@
         "build",
         "build_config",
         "build_daemon",
-        "built_collection",
-        "built_value",
+        "build_resolvers",
+        "build_runner_core",
         "code_builder",
         "collection",
-        "convert",
         "crypto",
         "dart_style",
+        "frontend_server_client",
         "glob",
         "graphs",
+        "http",
         "http_multi_server",
         "io",
-        "json_annotation",
+        "js",
         "logging",
         "meta",
         "mime",
@@ -61,22 +64,42 @@
         "path",
         "pool",
         "pub_semver",
+        "pubspec_parse",
         "shelf",
         "shelf_web_socket",
+        "stack_trace",
         "stream_transform",
+        "timing",
         "watcher",
+        "web",
         "web_socket_channel",
         "yaml"
       ]
     },
     {
+      "name": "freezed",
+      "version": "2.5.8",
+      "dependencies": [
+        "analyzer",
+        "build",
+        "build_config",
+        "collection",
+        "dart_style",
+        "freezed_annotation",
+        "json_annotation",
+        "meta",
+        "source_gen"
+      ]
+    },
+    {
       "name": "drift_dev",
-      "version": "2.29.0",
+      "version": "2.28.0",
       "dependencies": [
         "analyzer",
         "args",
         "build",
         "build_config",
+        "build_resolvers",
         "charcode",
         "cli_util",
         "collection",
@@ -176,6 +199,15 @@
       ]
     },
     {
+      "name": "freezed_annotation",
+      "version": "2.4.4",
+      "dependencies": [
+        "collection",
+        "json_annotation",
+        "meta"
+      ]
+    },
+    {
       "name": "dio",
       "version": "5.9.0",
       "dependencies": [
@@ -210,7 +242,7 @@
     },
     {
       "name": "drift",
-      "version": "2.29.0",
+      "version": "2.28.2",
       "dependencies": [
         "async",
         "collection",
@@ -334,11 +366,23 @@
       ]
     },
     {
+      "name": "web",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
       "name": "watcher",
       "version": "1.1.4",
       "dependencies": [
         "async",
         "path"
+      ]
+    },
+    {
+      "name": "timing",
+      "version": "1.0.2",
+      "dependencies": [
+        "json_annotation"
       ]
     },
     {
@@ -365,6 +409,17 @@
         "path",
         "stack_trace",
         "stream_channel"
+      ]
+    },
+    {
+      "name": "pubspec_parse",
+      "version": "1.5.0",
+      "dependencies": [
+        "checked_yaml",
+        "collection",
+        "json_annotation",
+        "pub_semver",
+        "yaml"
       ]
     },
     {
@@ -405,11 +460,9 @@
       "dependencies": []
     },
     {
-      "name": "json_annotation",
-      "version": "4.9.0",
-      "dependencies": [
-        "meta"
-      ]
+      "name": "js",
+      "version": "0.7.2",
+      "dependencies": []
     },
     {
       "name": "io",
@@ -425,6 +478,16 @@
       "version": "3.2.2",
       "dependencies": [
         "async"
+      ]
+    },
+    {
+      "name": "http",
+      "version": "1.5.0",
+      "dependencies": [
+        "async",
+        "http_parser",
+        "meta",
+        "web"
       ]
     },
     {
@@ -446,8 +509,16 @@
       ]
     },
     {
+      "name": "frontend_server_client",
+      "version": "4.0.0",
+      "dependencies": [
+        "async",
+        "path"
+      ]
+    },
+    {
       "name": "dart_style",
-      "version": "3.1.2",
+      "version": "3.1.1",
       "dependencies": [
         "analyzer",
         "args",
@@ -467,13 +538,6 @@
       ]
     },
     {
-      "name": "convert",
-      "version": "3.1.2",
-      "dependencies": [
-        "typed_data"
-      ]
-    },
-    {
       "name": "code_builder",
       "version": "4.11.0",
       "dependencies": [
@@ -485,19 +549,52 @@
       ]
     },
     {
-      "name": "built_value",
-      "version": "8.12.0",
+      "name": "build_runner_core",
+      "version": "9.1.2",
       "dependencies": [
+        "analyzer",
+        "async",
+        "build",
+        "build_config",
+        "build_resolvers",
+        "build_runner",
         "built_collection",
+        "built_value",
         "collection",
-        "fixnum",
-        "meta"
+        "convert",
+        "crypto",
+        "glob",
+        "graphs",
+        "json_annotation",
+        "logging",
+        "meta",
+        "package_config",
+        "path",
+        "pool",
+        "timing",
+        "watcher",
+        "yaml"
       ]
     },
     {
-      "name": "built_collection",
-      "version": "5.1.1",
-      "dependencies": []
+      "name": "build_resolvers",
+      "version": "2.5.4",
+      "dependencies": [
+        "analyzer",
+        "async",
+        "build",
+        "build_runner_core",
+        "collection",
+        "convert",
+        "crypto",
+        "graphs",
+        "logging",
+        "package_config",
+        "path",
+        "pool",
+        "pub_semver",
+        "stream_transform"
+      ]
     },
     {
       "name": "build_daemon",
@@ -519,24 +616,33 @@
     },
     {
       "name": "build_config",
-      "version": "1.2.0",
+      "version": "1.1.2",
       "dependencies": [
         "checked_yaml",
         "json_annotation",
         "path",
-        "pubspec_parse"
+        "pubspec_parse",
+        "yaml"
       ]
     },
     {
       "name": "build",
-      "version": "4.0.2",
+      "version": "2.5.4",
       "dependencies": [
         "analyzer",
+        "async",
+        "build_runner_core",
+        "built_collection",
+        "built_value",
+        "convert",
         "crypto",
         "glob",
+        "graphs",
         "logging",
+        "meta",
         "package_config",
-        "path"
+        "path",
+        "pool"
       ]
     },
     {
@@ -546,7 +652,7 @@
     },
     {
       "name": "analyzer",
-      "version": "8.1.1",
+      "version": "7.7.1",
       "dependencies": [
         "_fe_analyzer_shared",
         "collection",
@@ -563,15 +669,15 @@
       ]
     },
     {
-      "name": "string_scanner",
-      "version": "1.4.1",
+      "name": "json_annotation",
+      "version": "4.9.0",
       "dependencies": [
-        "source_span"
+        "meta"
       ]
     },
     {
       "name": "source_gen",
-      "version": "4.0.2",
+      "version": "2.0.0",
       "dependencies": [
         "analyzer",
         "async",
@@ -585,6 +691,13 @@
       ]
     },
     {
+      "name": "string_scanner",
+      "version": "1.4.1",
+      "dependencies": [
+        "source_span"
+      ]
+    },
+    {
       "name": "source_span",
       "version": "1.10.1",
       "dependencies": [
@@ -595,7 +708,7 @@
     },
     {
       "name": "sqlparser",
-      "version": "0.42.0",
+      "version": "0.41.2",
       "dependencies": [
         "charcode",
         "collection",
@@ -870,18 +983,10 @@
       ]
     },
     {
-      "name": "web",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
-      "name": "http",
-      "version": "1.5.0",
+      "name": "convert",
+      "version": "3.1.2",
       "dependencies": [
-        "async",
-        "http_parser",
-        "meta",
-        "web"
+        "typed_data"
       ]
     },
     {
@@ -926,24 +1031,23 @@
       ]
     },
     {
-      "name": "fixnum",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
-      "name": "pubspec_parse",
-      "version": "1.5.0",
+      "name": "built_value",
+      "version": "8.12.0",
       "dependencies": [
-        "checked_yaml",
+        "built_collection",
         "collection",
-        "json_annotation",
-        "pub_semver",
-        "yaml"
+        "fixnum",
+        "meta"
       ]
     },
     {
+      "name": "built_collection",
+      "version": "5.1.1",
+      "dependencies": []
+    },
+    {
       "name": "_fe_analyzer_shared",
-      "version": "88.0.0",
+      "version": "85.0.0",
       "dependencies": [
         "meta"
       ]
@@ -1060,6 +1164,11 @@
         "flutter",
         "path_provider_platform_interface"
       ]
+    },
+    {
+      "name": "fixnum",
+      "version": "1.1.1",
+      "dependencies": []
     },
     {
       "name": "posix",
