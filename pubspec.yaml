@@ -36,6 +36,7 @@ dependencies:
 
   # Logging
   stack_trace: ^1.11.1
+  dio: ^5.9.0
 
 dev_dependencies:
   # Testing
