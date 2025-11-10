@@ -1,3 +1,4 @@
+import 'package:glitchi/src/feature/catalog/data/i_catalog_repository.dart';
 import 'package:glitchi/src/feature/initialization/logic/composition_root.dart';
 
 /// {@template dependencies_container}
@@ -10,5 +11,8 @@ import 'package:glitchi/src/feature/initialization/logic/composition_root.dart';
 /// {@endtemplate}
 base class DependenciesContainer {
   /// {@macro dependencies_container}
-  const DependenciesContainer();
+  const DependenciesContainer({
+    required this.catalogRepository,
+  });
+  final ICatalogRepository catalogRepository;
 }

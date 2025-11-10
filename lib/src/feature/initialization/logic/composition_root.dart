@@ -1,6 +1,8 @@
 import 'package:clock/clock.dart';
+import 'package:dio/dio.dart';
 import 'package:glitchi/src/core/constant/config.dart';
 import 'package:glitchi/src/core/utils/refined_logger.dart';
+import 'package:glitchi/src/feature/initialization/logic/factories/catalog_repository_factory.dart';
 import 'package:glitchi/src/feature/initialization/model/dependencies_container.dart';
 
 /// {@template composition_root}
@@ -72,7 +74,20 @@ class DependenciesFactory extends AsyncFactory<DependenciesContainer> {
 
   @override
   Future<DependenciesContainer> create() async {
-    return DependenciesContainer();
+    final dio = Dio(
+      BaseOptions(
+        connectTimeout: Duration(seconds: 15),
+        receiveTimeout: Duration(seconds: 15),
+        sendTimeout: Duration(seconds: 15),
+      ),
+    );
+
+    final catalogRepository =
+        await CatalogRepositoryFactory(client: dio).create();
+
+    return DependenciesContainer(
+      catalogRepository: catalogRepository,
+    );
   }
 }
 

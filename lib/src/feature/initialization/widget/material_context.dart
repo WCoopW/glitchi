@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:glitchi/src/feature/catalog/widget/catalog_scope.dart';
 import 'package:glitchi/src/feature/home/widget/home_screen.dart';
 import 'package:glitchi/src/feature/theme/widget/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +23,9 @@ class MaterialContext extends StatelessWidget {
             theme: themeProvider.lightTheme,
             darkTheme: themeProvider.darkTheme,
             themeMode: themeProvider.themeMode,
-            home: const HomeScreen(),
+            home: CatalogScope(
+              child: const HomeScreen(),
+            ),
             builder: (context, child) => MediaQuery(
               key: _globalKey,
               data: mediaQueryData,
