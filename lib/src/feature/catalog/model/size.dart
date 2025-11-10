@@ -1,5 +1,5 @@
-final class Size {
-  const Size({
+final class ProductSize {
+  const ProductSize({
     required this.id,
     required this.exist,
   });
@@ -7,8 +7,8 @@ final class Size {
   final String id;
   final bool exist;
 
-  factory Size.fromJson(Map<String, Object?> json) {
-    return Size(
+  factory ProductSize.fromJson(Map<String, Object?> json) {
+    return ProductSize(
       id: json['name'] as String,
       exist: json['show'] as bool? ?? false,
     );
