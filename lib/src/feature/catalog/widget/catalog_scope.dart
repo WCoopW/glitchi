@@ -6,7 +6,9 @@ import 'package:glitchi/src/feature/catalog/bloc/product_bloc.dart';
 import 'package:glitchi/src/feature/catalog/bloc/product_event.dart';
 import 'package:glitchi/src/feature/catalog/bloc/product_state.dart';
 import 'package:glitchi/src/feature/catalog/data/i_catalog_repository.dart';
+import 'package:glitchi/src/feature/catalog/model/product.dart';
 import 'package:glitchi/src/feature/initialization/widget/dependencies_scope.dart';
+import 'package:glitchi/src/feature/product/widget/size_bottom_sheet.dart';
 
 class CatalogScope extends StatefulWidget {
   const CatalogScope({
@@ -120,6 +122,23 @@ class CatalogScopeState extends State<CatalogScope> {
   void refreshProducts() {
     _catalogBloc.add(
       ProductEvent.fetchProducts(1, _limit, 'dresses'),
+    );
+  }
+
+  void onProductTap(Product product) {
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+      showDragHandle: true,
+      builder: (context) => SelectSizeBottomSheet(
+        product: product,
+        onSizeSelected: (size) {
+          // TODO: Implement size selection
+          if (size != null) {
+            // Handle size selection
+          }
+        },
+      ),
     );
   }
 
