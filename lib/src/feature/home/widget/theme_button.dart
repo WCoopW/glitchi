@@ -14,7 +14,7 @@ class ThemeButton extends StatelessWidget {
   }) =>
       ThemeButton._(
         label: 'Светлая тема',
-        icon: Icons.light_mode_outlined,
+        icon: Icons.light_mode,
         isActive: isActive,
         onTap: onTap,
       );
@@ -25,7 +25,7 @@ class ThemeButton extends StatelessWidget {
   }) =>
       ThemeButton._(
         label: 'Темная тема',
-        icon: Icons.dark_mode_outlined,
+        icon: Icons.dark_mode,
         isActive: isActive,
         onTap: onTap,
       );
