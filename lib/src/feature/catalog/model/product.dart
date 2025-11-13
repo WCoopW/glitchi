@@ -1,15 +1,16 @@
+import 'package:glitchi/src/core/utils/extensions/int_extension.dart';
 import 'package:glitchi/src/feature/catalog/model/photo.dart';
 import 'package:glitchi/src/feature/catalog/model/size.dart';
 
 class Product {
-  const Product({
+  Product({
     required this.id,
     required this.name,
     required this.price,
     required this.photos,
     // required this.colors,
     required this.sizes,
-  }) : formattedPrice = '$price руб.';
+  }) : formattedPrice = '${price.formattedWithSpaces} руб.';
 
   final int id;
   final String name;
