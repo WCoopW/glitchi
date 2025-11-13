@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:glitchi/src/feature/cart/widget/cart_scope.dart';
 import 'package:glitchi/src/feature/catalog/widget/catalog_scope.dart';
 import 'package:glitchi/src/feature/home/widget/home_screen.dart';
 import 'package:glitchi/src/feature/theme/widget/theme_provider.dart';
@@ -23,14 +24,18 @@ class MaterialContext extends StatelessWidget {
             theme: themeProvider.lightTheme,
             darkTheme: themeProvider.darkTheme,
             themeMode: themeProvider.themeMode,
-            home: CatalogScope(
-              child: const HomeScreen(),
-            ),
-            builder: (context, child) => MediaQuery(
-              key: _globalKey,
-              data: mediaQueryData,
-              child: child!,
-            ),
+            home: const HomeScreen(),
+            builder: (context, child) {
+              return CartScope(
+                child: CatalogScope(
+                  child: MediaQuery(
+                    key: _globalKey,
+                    data: mediaQueryData,
+                    child: child!,
+                  ),
+                ),
+              );
+            },
           );
         },
       ),
