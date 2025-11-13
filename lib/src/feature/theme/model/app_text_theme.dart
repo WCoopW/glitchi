@@ -16,6 +16,7 @@ class AppTextTheme {
   static const double _heading4 = 16;
   static const double _heading5 = 14;
   static const double _paragraph = 13;
+  static const double _cartButtonText = 21;
   static const double _lineHeight = 22;
   static const double _letterSpacing = -0.41;
 
@@ -69,6 +70,14 @@ class AppTextTheme {
       bodyLarge: _baseStyle(
         fontSize: _paragraph,
         fontWeight: FontWeight.w300,
+        color: colorScheme.onSurface,
+      ),
+      // Кнопка корзины: 21px, weight 400, line-height 22px, Rubik
+      labelLarge: GoogleFonts.rubik(
+        fontSize: _cartButtonText,
+        fontWeight: FontWeight.w400,
+        height: _lineHeight / _cartButtonText,
+        letterSpacing: _letterSpacing,
         color: colorScheme.onSurface,
       ),
     );
