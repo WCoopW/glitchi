@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:glitchi/src/core/utils/extensions/context_extension.dart';
+import 'package:glitchi/src/feature/cart/widget/cart_scope.dart';
 import 'package:glitchi/src/feature/catalog/bloc/product_bloc.dart';
 import 'package:glitchi/src/feature/catalog/bloc/product_event.dart';
 import 'package:glitchi/src/feature/catalog/bloc/product_state.dart';
@@ -36,6 +37,7 @@ class CatalogScope extends StatefulWidget {
 class CatalogScopeState extends State<CatalogScope> {
   ScrollController scrollController = ScrollController();
   late final ProductBloc _catalogBloc;
+  late final CartScopeState _cartScope;
   late final StreamSubscription<void> _streamSubscription;
   late final ICatalogRepository repo;
   static const double _scrollThreshold = 200.0;
@@ -59,7 +61,7 @@ class CatalogScopeState extends State<CatalogScope> {
   /* -------------------------------------------------------------------------- */
   void initListeners() {
     _streamSubscription = _catalogBloc.stream.listen(_didStateChanged);
-    // favoritesScope = FavoritesScope.of(context, listen: false);
+    _cartScope = CartScope.of(context, listen: false);
     scrollController.addListener(_onScrollCallback);
     this.fetchProducts();
   }
@@ -125,17 +127,16 @@ class CatalogScopeState extends State<CatalogScope> {
     );
   }
 
-  void onProductTap(Product product) {
+  void onProductTap(Product product, BuildContext navigatorContext) {
     showModalBottomSheet(
-      context: context,
+      context: navigatorContext,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
       showDragHandle: true,
-      builder: (context) => SelectSizeBottomSheet(
+      builder: (bottomSheetContext) => SelectSizeBottomSheet(
         product: product,
         onSizeSelected: (size) {
-          // TODO: Implement size selection
           if (size != null) {
-            // Handle size selection
+            _cartScope.addProduct(product, size.id);
           }
         },
       ),
